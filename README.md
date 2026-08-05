@@ -37,4 +37,3 @@ Non-standard utility functions written to simplify common C operations:
 * **`ft_putchar_fd` / `ft_putstr_fd` / `ft_putendl_fd` / `ft_putnbr_fd`**: Writes data to a given file descriptor.
 
 
-make
