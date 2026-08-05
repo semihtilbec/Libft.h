@@ -1,7 +1,5 @@
 # Libft - Your First C Library
 
-![42 School Libft C Project](https://raw.githubusercontent.com/byalessandro/42-project-badges/main/badges/libfte.png)
-
 ## 📌 About the Project
 
 **Libft** is the very first individual project in the **42 School** curriculum. The task is to re-code a set of standard C library functions (`libc`), along with additional utility functions for string manipulation, memory management, and list handling.
