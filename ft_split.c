@@ -6,7 +6,7 @@
 /*   By: setilbec <setilbec@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 15:52:08 by setilbec          #+#    #+#             */
-/*   Updated: 2026/08/07 17:53:47 by setilbec         ###   ########.fr       */
+/*   Updated: 2026/08/07 18:43:31 by setilbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,36 +33,64 @@ static int	word_count(char const *s, char c)
 	return (word);
 }
 
-char	*split_words(char const *s, char c)
+static char	*split_words(char const *s, char c)
 {
 	char	*word;
 	size_t	len;
 	size_t	i;
 
 	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	word = (char *)malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	while (i < len)
 	{
-		if (s[1] && s[i] != c)
-		{
-			while (s[i] && s[i] != c)
-			{
-				len++;
-			}
-			word = (char *)malloc((len + 1) * sizeof(char));
-		}
-
+		word[i] = s[i];
+		i++;
 	}
+	word[i] = '\0';
+	return (word);
+}
 
+static char	**free_(char **words, size_t j)
+{
+	while (j > 0)
+	{
+		j--;
+		free(words[j]);
+	}
+	free(words);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**words;
+	size_t	j;
 
 	if (!s)
 		return (NULL);
-	words = (char **)malloc((word_count(s, c) + 1) * sizeof(char *));
+	words = (char **)malloc((word_count(s, c)) * sizeof(char *));
 	if (!words)
 		return (NULL);
+	j = 0;
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
+		{
+			words[j] = split_words(s, c);
+			if (!words[j])
+				return (free_all(words, j));
+			j++;
+			while (*s && *s != c)
+				s++;
+		}
+	}
+	words[j] = NULL;
+	RETURN (words);
 }
