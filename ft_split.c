@@ -6,7 +6,7 @@
 /*   By: setilbec <setilbec@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 15:52:08 by setilbec          #+#    #+#             */
-/*   Updated: 2026/08/07 18:43:31 by setilbec         ###   ########.fr       */
+/*   Updated: 2026/08/10 17:58:13 by setilbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = (char **)malloc((word_count(s, c)) * sizeof(char *));
+	words = (char **)malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (!words)
 		return (NULL);
 	j = 0;
@@ -85,12 +85,12 @@ char	**ft_split(char const *s, char c)
 		{
 			words[j] = split_words(s, c);
 			if (!words[j])
-				return (free_all(words, j));
+				return (free_(words, j));
 			j++;
 			while (*s && *s != c)
 				s++;
 		}
 	}
 	words[j] = NULL;
-	RETURN (words);
+	return (words);
 }
