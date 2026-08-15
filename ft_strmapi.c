@@ -18,7 +18,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	char			*st;
 
-	if (!st || !f)
+	if (!s || !f)
 		return (NULL);
 	len = 0;
 	while (s[len])
