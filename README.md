@@ -1,6 +1,6 @@
 *This project has been created as part of the 42 curriculum by setilbec.*
 
-## 📌 Description
+## Description
 
 **Libft** is the very first individual project in the **42 School** curriculum. The task is to re-code a set of standard C library functions (`libc`), along with additional utility functions for string manipulation, memory management, and list handling.
 
@@ -8,7 +8,7 @@ Since standard C libraries are forbidden in most subsequent 42 projects, **Libft
 
 ---
 
-## ⚙️ Instructions
+## Instructions
 
 Compile the library into a static archive (`libft.a`):
 
@@ -18,9 +18,6 @@ make clean    # removes object files
 make fclean   # removes object files and libft.a
 make re       # fclean + all
 ```
-
-To use the library in another project, include the header and link against
-the archive:
 
 ```sh
 cc your_file.c -I/path/to/Libft.h -L/path/to/Libft.h -lft -o your_program
@@ -32,7 +29,7 @@ cc your_file.c -I/path/to/Libft.h -L/path/to/Libft.h -lft -o your_program
 
 ---
 
-## 🛠️ Included Functions
+## Included Functions
 
 ### 1. Libc Functions
 Standard C library functions re-implemented without external dependencies:
@@ -78,4 +75,4 @@ Functions to create and manipulate a singly linked list (`t_list`):
 
 ### AI usage
 
-AI (Claude) was used during this project as a debugging and review aid, not to write the implementations.
+AI was used during this project as a debugging and review aid, not to write the implementations.
