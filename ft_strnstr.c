@@ -20,11 +20,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (!*little)
 		return ((char *)big);
 	b = 0;
-	while (big[b] && b < len)
+	while (b < len && big[b])
 	{
 		l = 0;
-		while (big[b + l] && little[l]
-			&& (b + l) < len && big[b + l] == little[l])
+		while ((b + l) < len && little[l]
+			&& big[b + l] == little[l])
 		{
 			l++;
 		}

@@ -8,6 +8,30 @@ Since standard C libraries are forbidden in most subsequent 42 projects, **Libft
 
 ---
 
+## ⚙️ Instructions
+
+Compile the library into a static archive (`libft.a`):
+
+```sh
+make          # builds libft.a
+make clean    # removes object files
+make fclean   # removes object files and libft.a
+make re       # fclean + all
+```
+
+To use the library in another project, include the header and link against
+the archive:
+
+```sh
+cc your_file.c -I/path/to/Libft.h -L/path/to/Libft.h -lft -o your_program
+```
+
+```c
+#include "libft.h"
+```
+
+---
+
 ## 🛠️ Included Functions
 
 ### 1. Libc Functions
